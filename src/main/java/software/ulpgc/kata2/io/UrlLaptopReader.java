@@ -42,7 +42,7 @@ public class UrlLaptopReader implements LaptopReader {
     }
 
     private Laptop loadFrom(String[] fields) {
-        // fields[0] = Manufacturer, fields[1] = Model Name, fields[12] = Price
-        return new Laptop(fields[0], fields[1], Double.parseDouble(fields[12]));
+        // fields[0] = Manufacturer, fields[1] = Model Name, fields[2] = Category
+        return new Laptop(fields[0], fields[1], fields[2]);
     }
 }
