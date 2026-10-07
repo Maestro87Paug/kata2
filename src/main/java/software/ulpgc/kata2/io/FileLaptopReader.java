@@ -41,6 +41,6 @@ public class FileLaptopReader implements LaptopReader {
     }
 
     private Laptop loadFrom(String[] fields) {
-        return new Laptop(fields[0], fields[1], Double.parseDouble(fields[12]));
+        return new Laptop(fields[0], fields[1], fields[2]);
     }
 }
