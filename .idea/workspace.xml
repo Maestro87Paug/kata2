@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84d11f77-f3d3-4376-840c-bcc938b34c2c" name="Changes" comment="Add all files">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/FileLaptopReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/LaptopReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/UrlLaptopReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/model/Laptop.java" afterDir="false" />
+    <list default="true" id="84d11f77-f3d3-4376-840c-bcc938b34c2c" name="Changes" comment="move csv to resources">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/ConsoleLaptopWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/FileLaptopWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/LaptopWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/FileLaptopReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/FileLaptopReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/UrlLaptopReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/io/UrlLaptopReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/model/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/kata2/model/Laptop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/laptops.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/laptops.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,24 +30,29 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Maestro87Paug"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Maestro87Paug&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Maestro87Paug/kata2.git",
-    "accountId": "774813cc-c28d-4530-b6fc-bd5bfbdd9f4a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Maestro87Paug/kata2.git&quot;,
+    &quot;accountId&quot;: &quot;774813cc-c28d-4530-b6fc-bd5bfbdd9f4a&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="3KMVPI2S5q2r2tiTkdcmWVnQuYI" />
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="false" />
@@ -58,10 +67,22 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/fabri/IdeaProjects/kata2/src",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fabri\IdeaProjects\kata2\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabri\IdeaProjects\kata2\src\main\resources" />
+      <recent name="C:\Users\fabri\IdeaProjects\kata2" />
+      <recent name="C:\Users\fabri\IdeaProjects\kata2\src" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -77,6 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1791367398838</updated>
       <workItem from="1791367400287" duration="2126000" />
+      <workItem from="1791372836998" duration="2828000" />
     </task>
     <task id="LOCAL-00001" summary="Create Main">
       <option name="closed" value="true" />
@@ -94,12 +116,89 @@
       <option name="project" value="LOCAL" />
       <updated>1791367737027</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add laptop and UrlLaptopReader code, and fix main">
+      <option name="closed" value="true" />
+      <created>1791373840098</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1791373840099</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add FileLaptopReader">
+      <option name="closed" value="true" />
+      <created>1791374027617</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1791374027617</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add laptops.csv">
+      <option name="closed" value="true" />
+      <created>1791374073002</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1791374073002</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add laptops.csv">
+      <option name="closed" value="true" />
+      <created>1791374220303</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1791374220303</updated>
+    </task>
+    <task id="LOCAL-00007" summary="move csv to resources">
+      <option name="closed" value="true" />
+      <created>1791374333287</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1791374333287</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create Main" />
     <MESSAGE value="Add all files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add all files" />
+    <MESSAGE value="add laptop and UrlLaptopReader code, and fix main" />
+    <MESSAGE value="add FileLaptopReader" />
+    <MESSAGE value="add laptops.csv" />
+    <MESSAGE value="move csv to resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="move csv to resources" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
