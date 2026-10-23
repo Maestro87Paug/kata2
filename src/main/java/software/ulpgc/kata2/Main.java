@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.List;
 
 public class Main {
-    static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
         URL url = new URL("https://raw.githubusercontent.com/37Degrees/DataSets/master/laptops.csv");
         LaptopReader urlReader = new UrlLaptopReader(url);
