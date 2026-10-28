@@ -4,42 +4,41 @@ import software.ulpgc.kata2.io.*;
 import software.ulpgc.kata2.model.LaptopStatistics;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class Main {
 
     public static void main(String[] args) {
         LaptopReader reader = new CsvLaptopReader();
         LaptopWriter writer = new TextLaptopWriter();
-        Path path = Path.of("src/main/resources/laptops.csv");
 
         try {
             String fileSummary;
-            String memorySummary;
+            String resourceSummary;
 
-            try (InputStream input = Files.newInputStream(path)) {
+            try (InputStream input = new FileInputStream(
+                    "src/main/resources/laptops.csv"
+            )) {
                 fileSummary = LaptopStatistics.summary(reader.readAll(input));
             }
 
-            try (InputStream input = new ByteArrayInputStream(
-                    Files.readAllBytes(path)
-            )) {
-                memorySummary = LaptopStatistics.summary(reader.readAll(input));
+            try (InputStream input =
+                         Main.class.getResourceAsStream("/laptops.csv")) {
+                if (input == null) {
+                    throw new IOException("No se encuentra laptops.csv");
+                }
+
+                resourceSummary =
+                        LaptopStatistics.summary(reader.readAll(input));
             }
 
-            if (!fileSummary.equals(memorySummary)) {
+            if (!fileSummary.equals(resourceSummary)) {
                 throw new IOException("Los resúmenes son diferentes");
             }
 
             writer.write(fileSummary, System.out);
 
-            try (ByteArrayOutputStream output = new ByteArrayOutputStream()) {
+            try (OutputStream output = new FileOutputStream("resultado.txt")) {
                 writer.write(fileSummary, output);
-
-                System.out.println("\nResumen guardado en memoria:");
-                System.out.print(output.toString(StandardCharsets.UTF_8));
             }
 
         } catch (IOException | UncheckedIOException e) {
