@@ -22,8 +22,10 @@ public class Main {
 
             try (InputStream input = new FileInputStream(
                     "src/main/resources/laptops.csv"
+
             )) {
                 laptopsFromFile = reader.readAll(input);
+
             }
 
             String fileSummary =
@@ -43,6 +45,10 @@ public class Main {
                             + "37Degrees/DataSets/master/laptops.csv"
             ).toURL().openStream()) {
                 laptopsFromUrl = reader.readAll(input);
+                String urlSummary = LaptopStatistics.summary(laptopsFromUrl);
+
+                System.out.println("\nResumen desde URL:");
+                writer.write(urlSummary, System.out);
             }
 
         } catch (IOException | UncheckedIOException e) {
