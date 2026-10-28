@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[]    args) {
         LaptopReader reader = new CsvLaptopReader();
         LaptopWriter writer = new TextLaptopWriter();
 
@@ -44,14 +44,6 @@ public class Main {
             ).toURL().openStream()) {
                 laptopsFromUrl = reader.readAll(input);
             }
-
-            String urlSummary =
-                    LaptopStatistics.summary(laptopsFromUrl);
-
-            System.out.println(
-                    "\nLos resúmenes coinciden: "
-                            + fileSummary.equals(urlSummary)
-            );
 
         } catch (IOException | UncheckedIOException e) {
             System.err.println("Error de entrada/salida: " + e.getMessage());
