@@ -1,33 +1,60 @@
 package software.ulpgc.kata2;
 
-import software.ulpgc.kata2.io.*;
+import software.ulpgc.kata2.io.CsvLaptopReader;
+import software.ulpgc.kata2.io.LaptopReader;
+import software.ulpgc.kata2.io.LaptopWriter;
+import software.ulpgc.kata2.io.TextLaptopWriter;
 import software.ulpgc.kata2.model.Laptop;
 import software.ulpgc.kata2.model.LaptopStatistics;
 
 import java.io.*;
-import java.net.URL;
+import java.net.URI;
 import java.util.List;
 
 public class Main {
-    static void main(String[] args) throws IOException {
 
-        URL url = new URL("https://raw.githubusercontent.com/37Degrees/DataSets/master/laptops.csv");
-        LaptopReader urlReader = new UrlLaptopReader(url);
-        List<Laptop> laptopsFromUrl = urlReader.readAll();
+    public static void main(String[] args) {
+        LaptopReader reader = new CsvLaptopReader();
+        LaptopWriter writer = new TextLaptopWriter();
 
+        try {
+            List<Laptop> laptopsFromFile;
 
-        LaptopReader fileReader = new FileLaptopReader(new File("src/main/resources/laptops.csv"));
+            try (InputStream input = new FileInputStream(
+                    "src/main/resources/laptops.csv"
+            )) {
+                laptopsFromFile = reader.readAll(input);
+            }
 
+            String fileSummary =
+                    LaptopStatistics.summary(laptopsFromFile);
 
+            writer.write(fileSummary, System.out);
 
-        String resumen = LaptopStatistics.summary(laptopsFromUrl);
+            try (OutputStream output =
+                         new FileOutputStream("resultado.txt")) {
+                writer.write(fileSummary, output);
+            }
 
+            List<Laptop> laptopsFromUrl;
 
-        LaptopWriter consoleWriter = new ConsoleLaptopWriter();
-        consoleWriter.write(resumen, System.out);
+            try (InputStream input = URI.create(
+                    "https://raw.githubusercontent.com/"
+                            + "37Degrees/DataSets/master/laptops.csv"
+            ).toURL().openStream()) {
+                laptopsFromUrl = reader.readAll(input);
+            }
 
+            String urlSummary =
+                    LaptopStatistics.summary(laptopsFromUrl);
 
-        LaptopWriter fileWriter = new FileLaptopWriter(new File("resultado.txt"));
-        fileWriter.write(resumen, new FileOutputStream("resultado.txt"));
+            System.out.println(
+                    "\nLos resúmenes coinciden: "
+                            + fileSummary.equals(urlSummary)
+            );
+
+        } catch (IOException | UncheckedIOException e) {
+            System.err.println("Error de entrada/salida: " + e.getMessage());
+        }
     }
 }
